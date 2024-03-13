@@ -3,7 +3,7 @@
 
 #include <regex>
 #include <string>
-
+#include <iostream>
 // Forward declaration de la classe Cmd
 class Cmd;
 
@@ -13,8 +13,8 @@ public:
     std::string extractContent(const std::string& html);
 
 private:
-    Cmd& cmd; // Ajouter une référence à Cmd
     std::regex pattern;
+    Cmd& cmd; // Ajouter une référence à Cmd
 };
 
 #endif // HTMLPARSER_HPP

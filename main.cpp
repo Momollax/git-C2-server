@@ -17,8 +17,7 @@ int main() {
     HtmlParser htmlParser(cmd);
 
     while (true) {
-        // Attendre une minute
-        std::this_thread::sleep_for(std::chrono::seconds(30));
+        
 
         // Effectuer la requête et extraire le contenu
         std::string response = httpRequest.get(url, userAgent);
@@ -41,6 +40,8 @@ int main() {
             ExecCmd execCmd(cmd);
             execCmd.executeLastCmd();
         }
+        // Attendre une minute
+        std::this_thread::sleep_for(std::chrono::seconds(10));
     }
 
     return 0;

@@ -4,6 +4,7 @@ Cmd::Cmd() : lastContent(""), htmlParser(*this) {}
 
 void Cmd::addContent(const std::string& content) {
     allContent.push_back(content);
+    lastContent = content;  // Met à jour lastContent avec la dernière commande ajoutée
 }
 
 const std::vector<std::string>& Cmd::getAllContent() const {
@@ -16,8 +17,8 @@ const std::string& Cmd::getLastContent() const {
 
 bool Cmd::addContentIfChanged(const std::string& content) {
     if (content != lastContent) {
-        lastContent = content;
         allContent.push_back(content);
+        lastContent = content;  // Met à jour lastContent avec la nouvelle commande
         return true;
     }
     return false;

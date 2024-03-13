@@ -1,5 +1,5 @@
 #include "htmlParser.hpp"
-
+#include "cmd.hpp"
 HtmlParser::HtmlParser(Cmd& cmd) : pattern("<p dir=\"auto\">(.*?)</p>"), cmd(cmd) {}
 
 std::string HtmlParser::extractContent(const std::string& html) {
@@ -15,6 +15,9 @@ std::string HtmlParser::extractContent(const std::string& html) {
 
         // Ajouter la commande extraite à la classe Cmd
         cmd.addContent(match.str(1));
+        
+        // Afficher la commande ajoutée pour débogage
+        std::cout << "Added command to Cmd: " << match.str(1) << std::endl;
     }
 
     std::cout << "Number of matches: " << std::distance(words_begin, words_end) << std::endl;
