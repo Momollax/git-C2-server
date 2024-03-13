@@ -1,3 +1,4 @@
+// cmd.cpp
 #include "cmd.hpp"
 
 Cmd::Cmd() : lastContent(""), htmlParser(*this) {}
@@ -17,8 +18,6 @@ const std::string& Cmd::getLastContent() const {
 
 bool Cmd::addContentIfChanged(const std::string& content) {
     if (content != lastContent) {
-        allContent.push_back(content);
-        lastContent = content;  // Met à jour lastContent avec la nouvelle commande
         return true;
     }
     return false;

@@ -1,15 +1,17 @@
-#ifndef EXECCMD_HPP
-#define EXECCMD_HPP
+// execCmd.hpp
+#ifndef EXEC_CMD_HPP
+#define EXEC_CMD_HPP
 
-#include "cmd.hpp"
+#include <string>
 
 class ExecCmd {
 public:
-    ExecCmd(const Cmd& cmd);  // Constructeur prenant une référence constante à une instance de Cmd
-    void executeLastCmd();
+    ExecCmd(const std::string& command);
+
+    void executeCommand() const;
 
 private:
-    const Cmd& cmdInstance;  // Référence constante à une instance de Cmd
+    const std::string& command;
 };
 
-#endif // EXECCMD_HPP
+#endif // EXEC_CMD_HPP
