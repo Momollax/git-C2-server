@@ -1,5 +1,7 @@
 #include "cmd.hpp"
 
+Cmd::Cmd() : lastContent(""), htmlParser(*this) {}
+
 void Cmd::addContent(const std::string& content) {
     allContent.push_back(content);
 }
@@ -9,10 +11,14 @@ const std::vector<std::string>& Cmd::getAllContent() const {
 }
 
 const std::string& Cmd::getLastContent() const {
-    if (!allContent.empty()) {
-        return allContent.back();
-    } else {
-        static const std::string emptyString;
-        return emptyString;
+    return lastContent;
+}
+
+bool Cmd::addContentIfChanged(const std::string& content) {
+    if (content != lastContent) {
+        lastContent = content;
+        allContent.push_back(content);
+        return true;
     }
+    return false;
 }
