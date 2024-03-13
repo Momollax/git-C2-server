@@ -12,7 +12,6 @@ public:
     const std::vector<std::string>& getAllContent() const;
     const std::string& getLastContent() const;
     bool addContentIfChanged(const std::string& content);
-
 private:
     std::string lastContent;
     HtmlParser htmlParser;

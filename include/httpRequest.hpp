@@ -1,21 +1,25 @@
-#ifndef HTTPREQUEST_HPP
-#define HTTPREQUEST_HPP
+#include "cmd.hpp"
 
-#include <curl/curl.h>
-#include <string>
-#include <iostream>
-class HttpRequest {
-public:
-    HttpRequest();
-    ~HttpRequest();
+Cmd::Cmd() : lastContent(""), htmlParser(*this) {}
 
-    std::string get(const std::string& url, const std::string& userAgent = "");
+void Cmd::addContent(const std::string& content) {
+    allContent.push_back(content);
+    lastContent = content;  // Met à jour lastContent avec la dernière commande ajoutée
+}
 
-private:
-    CURL* curl;
-    static const char* defaultUserAgent;
+const std::vector<std::string>& Cmd::getAllContent() const {
+    return allContent;
+}
 
-    static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output);
-};
+const std::string& Cmd::getLastContent() const {
+    return lastContent;
+}
 
-#endif // HTTPREQUEST_HPP
+bool Cmd::addContentIfChanged(const std::string& content) {
+    if (content != lastContent) {
+        allContent.push_back(content);
+        lastContent = content;  // Met à jour lastContent avec la nouvelle commande
+        return true;
+    }
+    return false;
+}

