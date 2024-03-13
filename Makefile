@@ -25,7 +25,7 @@ $(EXECUTABLE): $(OBJ_FILES)
 	mv $(EXECUTABLE) .
 
 clean:
-	rm -rf $(BUILD_DIR) $(BIN_DIR)
+	rm -rf $(BUILD_DIR) $(BIN_DIR)  main
 
 move:
 	mv $(EXECUTABLE) .

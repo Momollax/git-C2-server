@@ -1,11 +1,10 @@
-// cmd.cpp
 #include "cmd.hpp"
 
 Cmd::Cmd() : lastContent(""), htmlParser(*this) {}
 
 void Cmd::addContent(const std::string& content) {
     allContent.push_back(content);
-    lastContent = content;  // Met à jour lastContent avec la dernière commande ajoutée
+    lastContent = content;
 }
 
 const std::vector<std::string>& Cmd::getAllContent() const {

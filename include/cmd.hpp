@@ -1,4 +1,3 @@
-// cmd.hpp
 #ifndef CMD_HPP
 #define CMD_HPP
 
@@ -8,7 +7,7 @@
 
 class Cmd {
 public:
-    Cmd();  // Ajoutez un constructeur par défaut pour initialiser lastContent
+    Cmd();
     void addContent(const std::string& content);
     const std::vector<std::string>& getAllContent() const;
     const std::string& getLastContent() const;
@@ -20,4 +19,4 @@ private:
     std::vector<std::string> allContent;
 };
 
-#endif // CMD_HPP
+#endif

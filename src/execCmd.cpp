@@ -1,6 +1,5 @@
-// execCmd.cpp
 #include "execCmd.hpp"
-#include <cstdlib>  // Pour la fonction système
+#include <cstdlib>
 #include <iostream>
 
 ExecCmd::ExecCmd(const std::string& command) : command(command) {}

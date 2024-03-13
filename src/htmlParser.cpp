@@ -1,4 +1,3 @@
-// htmlParser.cpp
 #include "htmlParser.hpp"
 #include "cmd.hpp"
 
@@ -14,16 +13,11 @@ std::string HtmlParser::extractContent(const std::string& html) {
     for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
         std::smatch match = *i;
         extractedContent += match.str(1);
-
-        // Ajouter la commande extraite à la classe Cmd
         cmd.addContent(match.str(1));
-        
-        // Afficher la commande ajoutée pour débogage
-        //std::cout << "Added command to Cmd: " << match.str(1) << std::endl;
     }
 
     std::cout << "Number of matches: " << std::distance(words_begin, words_end) << std::endl;
-    setcmd_number(std::distance(words_begin, words_end));  // Utilisez correctement la fonction
+    setcmd_number(std::distance(words_begin, words_end));
     return extractedContent;
 }
 

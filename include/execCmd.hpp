@@ -1,4 +1,3 @@
-// execCmd.hpp
 #ifndef EXEC_CMD_HPP
 #define EXEC_CMD_HPP
 
@@ -14,4 +13,4 @@ private:
     const std::string& command;
 };
 
-#endif // EXEC_CMD_HPP
+#endif
